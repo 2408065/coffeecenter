@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Bliss - Menu</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff8f0;
+            color: #3e2723;
+        }
+
+        nav {
+            background: #4e342e;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #ffcc80;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 35px 15px 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            padding: 20px 8% 50px;
+        }
+
+        .item {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px #00000015;
+        }
+
+        .item .emoji {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .item h2 {
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #795548;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #6d4c41;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #3e2723;
+        }
+
+        footer {
+            background: #4e342e;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">☕ Cafe Bliss</div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <h1>Our Delicious Menu 🍰</h1>
+    <p class="subtitle">Freshly prepared with love!</p>
+
+    <section class="menu-container">
+
+        <div class="item">
+            <div class="emoji">☕</div>
+            <h2>Cappuccino</h2>
+            <p>Rich coffee with creamy milk foam.</p>
+            <p class="price">₹120</p>
+        </div>
+
+        <div class="item">
+            <div class="emoji">🍵</div>
+            <h2>Masala Tea</h2>
+            <p>Traditional tea with aromatic spices.</p>
+            <p class="price">₹80</p>
+        </div>
+
+        <div class="item">
+            <div class="emoji">🥪</div>
+            <h2>Veg Sandwich</h2>
+            <p>Fresh vegetables with tasty sauces.</p>
+            <p class="price">₹150</p>
+        </div>
+
+        <div class="item">
+            <div class="emoji">🍕</div>
+            <h2>Cheese Pizza</h2>
+            <p>Delicious pizza topped with cheese.</p>
+            <p class="price">₹220</p>
+        </div>
+
+        <div class="item">
+            <div class="emoji">🍔</div>
+            <h2>Veg Burger</h2>
+            <p>Crispy patty with fresh vegetables.</p>
+            <p class="price">₹180</p>
+        </div>
+
+        <div class="item">
+            <div class="emoji">🍰</div>
+            <h2>Chocolate Cake</h2>
+            <p>Soft and rich chocolate dessert.</p>
+            <p class="price">₹140</p>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Cafe Bliss | Made with ❤️</p>
+    </footer>
+
+</body>
+</html>

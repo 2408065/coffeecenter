@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Bliss - Home</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff8f0;
+            color: #3e2723;
+        }
+
+        nav {
+            background: #4e342e;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: #ffcc80;
+        }
+
+        /* Hero section with cafe background image */
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0.45),
+                rgba(0, 0, 0, 0.45)
+            ), url("image1.png");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #6d4c41;
+            color: white;
+            padding: 13px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background: #3e2723;
+        }
+
+        .about {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .about h2 {
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background: #4e342e;
+            color: white;
+            text-align: center;
+            padding: 18px;
+        }
+
+        /* Responsive design for mobile screens */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            nav ul {
+                gap: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">☕ Cafe Bliss</div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>Welcome to Cafe Bliss ☕</h1>
+
+        <p>Your perfect place for coffee, food and happiness.</p>
+
+        <div>
+            <a href="menu.html" class="btn">View Our Menu</a>
+            <a href="login.html" class="btn">Login</a>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>About Us</h2>
+        <p>
+            Cafe Bliss serves freshly brewed coffee, delicious snacks
+            and tasty desserts in a warm and friendly atmosphere.
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2026 Cafe Bliss | Made with ❤️</p>
+    </footer>
+
+</body>
+</html>
