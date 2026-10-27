@@ -92,9 +92,15 @@
             background: #3e2723;
         }
 
+        button:disabled {
+            background: #a1887f;
+            cursor: not-allowed;
+        }
+
         #message {
             text-align: center;
             margin-top: 15px;
+            line-height: 1.5;
         }
 
         footer {
@@ -103,11 +109,27 @@
             text-align: center;
             padding: 18px;
         }
+
+        @media (max-width: 480px) {
+            nav {
+                justify-content: center;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .login-container {
+                padding: 25px;
+                margin: 40px auto;
+            }
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- Navigation Bar -->
     <nav>
         <div class="logo">☕ Cafe Bliss</div>
 
@@ -118,6 +140,7 @@
         </ul>
     </nav>
 
+    <!-- Login Form -->
     <div class="login-container">
         <h1>Login ☕</h1>
 
@@ -140,26 +163,69 @@
                 required
             >
 
-            <button type="submit">Login</button>
+            <button type="submit" id="loginButton">Login</button>
 
-            <p id="message" role="status"></p>
+            <p id="message" role="status" aria-live="polite"></p>
         </form>
     </div>
 
+    <!-- Footer -->
     <footer>
         <p>© 2026 Cafe Bliss | Made with ❤️</p>
     </footer>
 
+    <!-- Google Sheets Connection -->
     <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+        document.getElementById("loginForm").addEventListener(
+            "submit",
+            async function(event) {
+                event.preventDefault();
 
-            const username = document.getElementById("username").value.trim();
+                const username = document
+                    .getElementById("username")
+                    .value.trim();
 
-            document.getElementById("message").textContent =
-                "Form submitted for " + username +
-                ". Connect a secure backend to verify your login.";
-        });
+                const message = document.getElementById("message");
+                const loginButton = document.getElementById("loginButton");
+
+                // Your Google Apps Script Web App URL
+                const scriptURL =
+                    "https://script.google.com/macros/s/AKfycbxSshYEyQiV-F5KCvK5_KjofUR_r-Wd0ejKnRg-Wl_pTENJ9Pls0bLh4bfJpxoEQPon5A/exec";
+
+                if (!username) {
+                    message.textContent = "Please enter your username.";
+                    return;
+                }
+
+                message.textContent = "Submitting...";
+                loginButton.disabled = true;
+
+                try {
+                    await fetch(scriptURL, {
+                        method: "POST",
+                        mode: "no-cors",
+                        headers: {
+                            "Content-Type":
+                                "application/x-www-form-urlencoded"
+                        },
+                        body: new URLSearchParams({
+                            username: username
+                        })
+                    });
+
+                    message.textContent =
+                        "Request sent! Please check your Google Sheet.";
+
+                    document.getElementById("loginForm").reset();
+
+                } catch (error) {
+                    message.textContent =
+                        "Unable to send the request. Please try again.";
+                } finally {
+                    loginButton.disabled = false;
+                }
+            }
+        );
     </script>
 
 </body>
